@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>be.j4s.playground</groupId>
+	<artifactId>helloLtwAspect</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<properties>
+		<org.springframework.version>3.0.5.RELEASE</org.springframework.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>be.j4s.playground</groupId>
+			<artifactId>helloLtwServlet</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.6.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.6.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>${project.artifactId}##${project.version}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>com.googlecode.t7mp</groupId>
+				<artifactId>maven-t7-plugin</artifactId>
+				<version>0.9.9.M1</version>
+				<configuration>
+					<libs />
+					<contextFile>src/main/tomcat/conf/context.xml</contextFile>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.0</version>
+				<configuration>
+					<webResources>
+						<webResource>
+							<directory>${basedir}/src/main/webapp</directory>
+						</webResource>
+					</webResources>
+				</configuration>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+	</build>
+</project>

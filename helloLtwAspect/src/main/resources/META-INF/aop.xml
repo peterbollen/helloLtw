@@ -1,0 +1,13 @@
+<aspectj>
+	<aspects>
+		<aspect name="be.j4s.playground.helloLtwAspect.aspect.EchoAspect" />
+	</aspects>
+	<weaver
+		options="-verbose -showWeaveInfo -XmessageHandlerClass:org.springframework.aop.aspectj.AspectJWeaverMessageHandler">
+		<include within="be.j4s.playground.helloLtwServlet.servlet.EchoServlet" />
+		<include within="org..*" />
+		<include within="com..*" />
+		<include within="java..*" />
+		<include within="javax..*" />
+	</weaver>
+</aspectj>
