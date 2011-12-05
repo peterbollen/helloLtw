@@ -12,12 +12,12 @@ public class EchoAspect {
 
 	private static final Logger LOG = LoggerFactory.getLogger(EchoAspect.class);
 
-	@Pointcut("execution(* be.j4s.playground.helloLtwServlet.servlet.EchoServlet.*(..))")
+	@Pointcut("execution(* be.j4s.playground.helloLtwAspect.servlet.*.doGet(..))")
 	public void simple() {
 	}
 
 	@Before("simple()")
 	public void process(JoinPoint jp) {
-		LOG.info("In be.j4s.playground.helloLtwAspect.aspect.EchoAspect.process(JoinPoint)");
+		LOG.error("$$$$$$$$$$$$$$$$$$$$$$$ money time $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	}
 }

@@ -9,7 +9,7 @@ Environment
 
 Building and Running
 --------------------
-$ mvn clean install && mkdir -p helloLtwAspect/target/tomcat/lib && cp helloLtwAspect/src/main/tomcat/lib/spring-instrument-tomcat-3.0.5.RELEASE.jar helloLtwAspect/target/tomcat/lib/ && mvn t7:run -f helloLtwAspect/pom.xml
+$ mvn clean install && export MAVEN_OPTS=-javaagent:./src/main/tomcat/lib/aspectjweaver-1.6.11.jar && mvn t7:run
 
 Testing
 -------

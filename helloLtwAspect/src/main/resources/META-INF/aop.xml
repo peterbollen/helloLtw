@@ -4,10 +4,6 @@
 	</aspects>
 	<weaver
 		options="-verbose -showWeaveInfo -XmessageHandlerClass:org.springframework.aop.aspectj.AspectJWeaverMessageHandler">
-		<include within="be.j4s.playground.helloLtwServlet.servlet.EchoServlet" />
-		<include within="org..*" />
-		<include within="com..*" />
-		<include within="java..*" />
-		<include within="javax..*" />
+		<include within="be..*" />
 	</weaver>
 </aspectj>
